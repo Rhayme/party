@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html  ng-app="" lang="en">
+<html  ng-app="partyApp" lang="en">
     <head>
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./css/styles.css" rel="stylesheet">
+        <!--google font --> 
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
+        <link href="app/css/styles.css" rel="stylesheet">
     </head>
     <body>
-    
-{{2+2}}
-
+       
+ 
+        <top-nav></top-nav>
+        
+        
+        <main ng-view>
+            
+        </main>
 
 
         <script src="bower_components/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.min.js"></script>
+      
+        <script src="./app/app.js"></script>
+        <script src="./app/components/navigation/navbar.component.js"> </script>
+        <script src="./app/components/createParty/create.component.js"> </script>
+        <script src="./app/components/createParty/create-party-controller.js"> </script>
+        <script src="./app/components/createParty/create-party-service.js"> </script>
+       
+        
+
     </body>
 </html>

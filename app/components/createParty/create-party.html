@@ -1,0 +1,15 @@
+<div class="content">
+    
+    <form name="createForm" ng-submit="addParty(party)" novalidate>
+        <input type="text" name="name" placeholder="Party Name" ng-model="party.name">
+        <input type="stret" name="street" placeholder="Street" ng-model="party.street">
+        <input type="state" name="state" placeholder="State" ng-model="party.state">
+        <input type="city" name="city" placeholder="city" ng-model="party.city">
+        <input type="zipcode" name="zipcode" placeholder="Zip Code"  ng-model="party.zip">
+        <textarea placeholder="Enter description" ng-model="party.description"></textarea>
+
+        <input type="submit" value="Send">
+        
+    </form>
+
+</div>

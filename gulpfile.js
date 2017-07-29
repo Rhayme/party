@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({lazy:true});
 
-var path = './src/client/scss/*.scss';
+var path = './app/scss/*.scss';
 /**
  * This task is compiling SCSS into css. 
  */
@@ -11,7 +11,7 @@ gulp.task('sass', function(){
     return gulp
     .src(path)
     .pipe($.sass())
-    .pipe(gulp.dest('./src/client/css'))
+    .pipe(gulp.dest('./app/css'))
 });
 
 
