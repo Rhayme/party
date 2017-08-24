@@ -1,1 +1,11 @@
-<h>this is the party page</h>
+<div class="content">
+   <ul  id="ninja-list">
+       <li ng-repeat="party in parties">{{party.id}} {{party.name}} <br> Address: {{party.street}} {{party.city}} 
+           {{party.state}}, {{party.zip}}
+            <div class="remove" ng-click="removeNinja(ninja)">x</div>
+       </li>
+   </ul>
+</div>
+
+
+

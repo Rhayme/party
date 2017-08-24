@@ -27,12 +27,13 @@ massive(connectionString).then(dbInstance=> {
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use(express.static(__dirname))
+app.use(express.static(__dirname)) //this line is used to run your file from local host.
 
 
 
 /***********************************PARTY*******************************/
 app.post('/api/party', partyController.create);
+
 app.get('/api/party', partyController.getAll);
 app.get('/api/party/:id', partyController.getOne);
 app.put('/api/party/:id', partyController.updatePraty);
@@ -41,6 +42,7 @@ app.delete('/api/party/:id', partyController.deleteParty);
 /**********************************ITEM********************************/
 app.post('/api/items', itemController.createItems);
 app.get('/api/items', itemController.getAllItems);
+app.get('/api/party/:party_id/items', itemController.getPartyItems);
 app.get('/api/items/:id', itemController.getOneItem);
 app.put('/api/items/:id', itemController.updateItem);
 app.delete('/api/items/:id', itemController.deleteItem);

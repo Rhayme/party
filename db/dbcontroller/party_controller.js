@@ -7,7 +7,10 @@ module.exports = {
          const {name, street, state, city, zip, description } = req.body;
          
     dbInstance.create_party([name, street, state, city, zip, description])
-      .then( () => res.status(200).send() )
+      .then( (party_id) =>{
+         res.status(200).send(party_id)
+        //console.log(party_id)
+       })
       .catch( () => res.status(500).send() );
   },
   // Get one party from the party table in the database.

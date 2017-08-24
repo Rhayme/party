@@ -2,11 +2,17 @@ module.exports = {
 
     createItems: (req, res, next) => {
         const dbInstance = req.app.get('db');
-        const {name, description, qty} = req.body;
+        const {name, description, qty, party_id} = req.body;
 
-        dbInstance.create_item([name, description, qty])
-        .then(() =>{
-            res.status(200).send();
+        dbInstance.create_item([name, description, qty, party_id])
+        .then((result) =>{
+            console.log(result.id);
+           return dbInstance.read_item([result[0].id])
+            .then( item => {
+               
+                res.status(200).send(item);
+            })
+                      
         })
         .catch(() => {
             res.status(500).send();
@@ -39,6 +45,22 @@ getAllItems: (req, res, next) => {
     })
 
 },
+getPartyItems: (req, res, next) => {
+    const dbInstance = req.app.get('db');
+   const {params} = req;
+
+    dbInstance.read_party_items([params.party_id])
+    .then(items => {
+        res.status(200).send(items);
+    })
+    .catch(() => {
+        res.status(500).send();
+    })
+
+},
+
+
+
 updateItem: (req, res, next) => {
     const dbInstance =  req.app.get('db');
     const { name, description, qty } = req.body;

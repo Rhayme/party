@@ -1,0 +1,49 @@
+<!-- form-profile.html -->
+<form id="signup-form" ng-submit="addParty(newParty)">
+<h3>Party Information</h3>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="partyname">Party Name</label>
+      <input type="text" class="form-control" placeholder="name" value="Party Name" ng-model="newParty.name">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="street">Street</label>
+      <input type="text" class="form-control" placeholder="Street" value="Street" ng-model="newParty.street">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="city">City</label>
+      <input type="text" class="form-control" placeholder="City" ng-model="newParty.city">
+      
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="state">State</label>
+      <input type="text" class="form-control"placeholder="State" ng-model="newParty.state">
+     
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="zip">Zip</label>
+      <input type="text" class="form-control"  placeholder="Zip" ng-model="newParty.zip">
+      
+    </div>
+  </div>
+  
+  
+ </div>
+ <div>
+  <button type="submit" class="btn btn-danger col-xs-2 col-xs-offset-5">Submit</button>
+</div>
+<br><br>
+<!-- 
+<div class="form-group row">
+<div class="col-xs-2 col-xs-offset-10">
+    <a ui-sref="create-party.items" class="btn btn-block btn-info">
+    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div> -->
+</form>
+

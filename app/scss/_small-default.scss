@@ -79,12 +79,58 @@ nav {
 
 
 /*CREATE PARTY FORM*/
+
+h1,h2,h3{
+  margin: 0;
+}
+
+.belt{
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-left: 5px;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+#menu-bar{
+  background: crimson;
+  color: #fff;
+  padding: 10px;
+}
+
+#menu-bar h1{
+  font-size: 24px;
+  font-weight: normal;
+  display: inline-block;
+}
+
+#menu-bar ul{
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 6px 0;
+}
+
+#menu-bar li{
+  float: right;
+  margin-left: 20px;
+}
+
+#menu-bar a{
+  color: #fff
+}
+
+main{
+  background:$secondaryColor;
+  width: 80%;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+
 .content{
   padding: 20px;
   overflow: hidden;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .content button,textarea,
@@ -98,7 +144,10 @@ nav {
   box-shadow: 2px 2px 2px rgba(20,20,20,0.1);
   font-size: 16px;
 }
-
+textarea{
+  width: 98%;
+ 
+}
 
 .content button:nth-child(2){
   float: right;
@@ -114,6 +163,7 @@ nav {
   padding: 15px 0;
   border-top: 1px solid #e2e2e2;
   color: #444;
+  text-transform: capitalize;
 }
 
 .content li span{
@@ -126,14 +176,7 @@ nav {
   font-size: 22px;
 }
 
-.content input {
-  width: 90%;
-  padding: 10px 5%;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-  margin: 10px 0;
-}
-.content textarea{
+.content input{
   width: 90%;
   padding: 10px 5%;
   border-radius: 10px;
@@ -147,6 +190,174 @@ nav {
   margin: 15px auto;
 }
 
+.remove{
+  float: right;
+  padding: 5px;
+  background: #fff;
+  width: 18px;
+  text-align: center;
+  border-radius: 20px;
+  color: crimson;
+  cursor: pointer;
+  margin-left: 10px;
+}
+img { 
+    margin: -12px 10px 0 0;
+    float: left;
+    width: 50px;
+}
+  .ramdon{
+    text-align: left;
+     margin-left: auto;
+    margin-right: auto;
+
+  }
+
+
+
+
+
+
+  /*********************************ANIMATION*******************************/
+  /*give animation to the view*/
+    /*The starting css styles for the enter animation*/
+  main.ng-enter{
+    transition: 0.5s linear all;
+    opacity: 0;
+  }
+
+    /*The finishing css styles for the animation*/
+    main.ng-enter.ng-enter-active { 
+      opacity: 1;
+    }
+
+    /*give animation went enter a new ninja*/
+
+    #ninja-list li.ng-enter {
+       transition: 0.2s linear all;
+       opacity: 0;
+       transform: translateY(30px);
+        }
+
+    #ninja-list li.ng-enter.ng-enter-active { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /*adds animation went delete*/
+
+    #ninja-list li.ng-leave {
+       transition: 0.2s linear all;
+       opacity: 1;
+       transform: translatex(0);
+        }
+
+    #ninja-list li.ng-leave.ng-leave-active { 
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    /*staguer animation to delete all the nijas at one*/
+
+
+        
+    #ninja-list li.ng-leave-stagger {
+       transition-delay: 0.2s;
+       transition-duration: 0;
+
+    }
+
+    /*created by me*/
+    input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+      border: 2px solid red;
+    }
+
+    input[disabled = "disabled"]{
+      opacity: 0.4;
+      cursor: not-allowed !important;
+    }
+
+/*table*/
+
+/* BASIC STYLINGS
+============================================================================= */
+
+
+/* form styling */
+#form-container                { background:$primaryColor; margin-bottom:20px;
+    border-radius:5px; }
+#form-container .page-header   { background:#151515; margin:0; padding:30px; 
+    border-top-left-radius:5px; border-top-right-radius:5px; h2{
+        color:#fff;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }}
+
+/* numbered buttons */
+#status-buttons                 {  }
+#status-buttons a               { color:#FFF; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
+#status-buttons a:hover         { text-decoration:none; }
+#status-buttons span            { background:#080808; display:block; height:30px; margin:0 auto 10px; padding-top:5px; width:30px; 
+    border-radius:50%; }
+
+/* active buttons */
+#status-buttons a.active span   { background:#00BC8C; }
+#form-views h3{
+    color: #fff;
+   font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* ANIMATION STYLINGS
+============================================================================= */
+#signup-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
+}
+    
+/* enter animation */
+#form-views.ng-enter            { 
+    -webkit-animation:slideInRight 0.5s both ease;
+	-moz-animation:slideInRight 0.5s both ease;
+	animation:slideInRight 0.5s both ease; 
+}
+
+/* leave animation */
+#form-views.ng-leave            { 
+    -webkit-animation:slideOutLeft 0.5s both ease;
+	-moz-animation:slideOutLeft 0.5s both ease;
+	animation:slideOutLeft 0.5s both ease;   
+}
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+	to 		{ transform: translateX(-200%); }
+}
+@-moz-keyframes slideOutLeft {	
+	to 		{ -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes slideOutLeft {
+	to 		{ -webkit-transform: translateX(-200%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+	from 	{ transform:translateX(200%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+	from 	{ -moz-transform:translateX(200%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+	from 	{ -webkit-transform:translateX(200%); }
+	to 		{ -webkit-transform: translateX(0); }
+}
 
 /* ---------- Clearfix Forces an Element no To collapse, put this class to any element that get out of it flow 
 becuase of the use of float ------------*/

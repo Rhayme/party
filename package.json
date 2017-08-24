@@ -23,8 +23,11 @@
     "gulp-util": "^3.0.8"
   },
   "dependencies": {
+    "angular-animate": "^1.6.5",
     "angular-route": "^1.6.5",
+    "angular-ui-router": "^1.0.0-rc.1",
     "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
     "cors": "^2.8.4",
     "express": "^4.15.3",
     "massive": "^3.0.0"
